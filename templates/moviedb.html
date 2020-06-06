@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<title>Movie DB</title>
+</head>
+
+<div class="container-fluid border">
+	<div class="row border">
+			Movie DB
+	</div>
+	<div class="row border d-flex flex-row">
+		<form>
+			<input id="searchFor" type = "text" placeholder="title" >
+			<button id="search" type="submit">search</button>
+		</form >
+	</div>
+
+<!--	show number of results-->
+	<div class="row border" id="showing"></div>
+
+	<!--		set innerHTML after search-->
+	<div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 border" id="searchResults"></div>
+
+
+</div>
+<body>
+
+<script >
+
+	const URL = 'https://api.themoviedb.org/3/'
+	const IMG_URL = 'http://image.tmdb.org/t/p/w185'
+	const API_KEY = 'api_key=9df0b5a500205d1b5d6cd6b05fe9e16a&'
+
+  const query = (tags, all = false) => {
+    if (all)
+      return document.querySelectorAll(tags)
+    else
+      return document.querySelector(tags)
+  }
+
+	query('body').onload = () => {
+    const endpoint = 'movie/now_playing?' + API_KEY
+	  ajax(endpoint, true)
+	}
+
+  const ajax = (endpoint, callback) => {
+    const Http = new XMLHttpRequest()
+    const url = URL + endpoint
+    Http.open("GET", url)
+    Http.send()
+
+    Http.onreadystatechange = (e) => {
+      if (Http.readyState === 4) {
+        populate(JSON.parse(Http.responseText))
+      }
+    }
+  }
+
+  const search = query('#search')
+	search.onclick = (e) => {
+	  e.preventDefault()
+    const endpoint = 'search/movie?' + API_KEY + 'query=' + query('#searchFor').value
+    ajax(endpoint,1)
+	}
+
+	const populate = (json) => {
+
+	  query('#showing').innerHTML = `Showing ${json.results.length} out of ${json.total_results} result(s)`
+
+	  console.log(json)
+		let results = ''
+		json.results.forEach((movie) => {
+		  results = results + formatHTML(movie)
+		})
+		query('#searchResults').innerHTML = results
+	}
+
+	const formatHTML = (movie) => (`
+			  <div class="col border text-center" id="">
+					<img src = "${IMG_URL + movie.poster_path}" alt = "" >
+					<p>${movie.original_title}</p>
+					<p>${movie.release_date}</p>
+				</div>
+   `)
+
+</script >
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!--API KEY = 9df0b5a500205d1b5d6cd6b05fe9e16a-->
+<!--URL for images: http://image.tmdb.org/t/p/w185/<<path to image>>-->
+<!--w185 || w500 changes the size of the returned img-->

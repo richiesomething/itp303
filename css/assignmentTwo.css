@@ -1,0 +1,275 @@
+/* ---- START MOBILE QUERIES ----- */
+#topBar {
+    background: linear-gradient(.25turn, crimson, gold);
+    color: white;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.mobile {
+    display: inline;
+}
+
+.tablet {
+    display: none;
+}
+
+.desktop {
+    display: none;
+}
+
+#itemName {
+    text-align: center;
+}
+
+#mindBender {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#promo {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 20%;
+    margin-left: 20%;
+    background: linear-gradient(.25turn, crimson, gold);
+    border-radius: 20px;
+    text-align: center;
+}
+
+#reviews {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.relatedItem {
+    border-style: solid;
+    margin: 20%;
+    padding: 5%;
+    align-content: center;
+}
+
+.relatedImg {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    align-content: center;
+}
+
+.overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.relatedItem:hover .relatedImg {
+    opacity: 0.3;
+}
+
+.relatedItem:hover .overlay {
+    opacity: 1;
+}
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+/* ---- End MOBILE QUERIES ----- */
+
+/* ---- START TABLET QUERIES ----- */
+@media (min-width: 768px) {
+    .tablet {
+        display: inline;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .top {
+        display:table;
+    }
+
+    .topLeft {
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+
+    #mindBenderTablet {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    #promoTablet {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 20%;
+        margin-left: 20%;
+        background: linear-gradient(.25turn, crimson, gold);
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .topRight {
+        width: 50%;
+        float: right;
+    }
+
+    #itemNameTablet {
+        text-align: left;
+    }
+
+    #reviewsTablet {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+
+    #relatedTablet {
+        margin-left: 5%;
+    }
+
+    .bottomLeft {
+        width: 50%;
+        float: left;
+    }
+
+    .bottomRight {
+        width: 50%;
+        float: right;
+    }
+
+    .relatedItem {
+        margin: 10%;
+    }
+
+}
+/* ---- END TABLET QUERIES ----- */
+
+/* ---- START DESKTOP QUERIES ----- */
+@media (min-width: 992px) {
+    .desktop {
+        display: inline;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .top {
+        display:table;
+    }
+
+    .topLeft {
+        width: 50%;
+        float: left;
+        margin: 0;
+    }
+
+    #mindBenderDesktop {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    #promoDesktop {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 20%;
+        margin-left: 20%;
+        background: linear-gradient(.25turn, crimson, gold);
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .topRight {
+        width: 50%;
+        float: right;
+    }
+
+    #itemNameDesktop {
+        text-align: left;
+    }
+
+    #reviewsDesktop {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+
+    #relatedDesktop {
+        margin-left: 5%;
+    }
+
+    .relatedItems {
+        width: 100%;
+        display: table;
+    }
+
+    .relatedItem {
+        margin: 0;
+        padding: 0;
+        width: 20%;
+        float: left;
+        margin-left: 3%;
+        position: relative;
+    }
+
+    .overlay {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .relatedItem:hover .relatedImg {
+        opacity: 0.3;
+    }
+
+    .relatedItem:hover .overlay {
+        opacity: 1;
+    }
+    .text {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+}
+/* ---- END DESKTOP QUERIES ----- */
+
+
+

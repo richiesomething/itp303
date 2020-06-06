@@ -1,0 +1,235 @@
+/* ---- START MOBILE QUERIES ----- */
+* {
+    font-family: Baghdad;
+}
+
+#topBar {
+    background: linear-gradient(.25turn, crimson, gold);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    top: 100%;
+}
+
+#product {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+#row1a {
+    display: grid;
+    width: 100%;
+    height: auto;
+}
+
+#mindBender {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#promo {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 15%;
+    margin-left: 15%;
+    background: linear-gradient(.25turn, crimson, gold);
+    text-align: center;
+    border-radius: 30px;
+}
+
+#row1b {
+    padding-top: 10%;
+    display: grid;
+    height: 100%;
+}
+
+#reviews {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+.relatedItem {
+    border-style: solid;
+    margin: 20%;
+    padding: 5%;
+    align-content: center;
+}
+
+.relatedImg {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    align-content: center;
+}
+
+/* ---- END MOBILE QUERIES ----- */
+
+/* ---- START TABLET QUERIES ----- */
+@media (min-width: 768px) {
+
+    #mainContent {
+        margin: 0;
+        padding: 0;
+    }
+
+    #product {
+        float: right;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+        text-align: center;
+    }
+
+    #row1a {
+        width: 50%;
+    }
+
+    #mindBender {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    #promo {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 15%;
+        margin-left: 15%;
+        background: linear-gradient(.25turn, crimson, gold);
+        text-align: center;
+    }
+
+    #row1b {
+        float: right;
+        width: 50%;
+    }
+
+    #reviews {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    #related {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .relatedProducts {
+        width: 90%;
+    }
+
+    .relatedItem {
+        width: 50%;
+    }
+
+    .one {
+        float: left;
+    }
+
+    .two {
+        float: right;
+    }
+}
+
+/* ---- END TABLET QUERIES ----- */
+
+/* ---- START DESKTOP QUERIES ----- */
+
+@media (min-width: 992px) {
+    * {
+        font-family: Baghdad;
+    }
+
+    #topBar {
+        background: linear-gradient(.25turn, crimson, gold);
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        top: 100%;
+    }
+
+    #product {
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+        text-align: center;
+    }
+
+    #row1a {
+        float: left;
+        display: grid;
+        width: 50%;
+        height: auto;
+    }
+
+    #mindBender {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    #promo {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 30%;
+        margin-left: 30%;
+        background: linear-gradient(.25turn, crimson, gold);
+        text-align: center;
+    }
+
+    #row1b {
+        padding-top: 10%;
+        display: grid;
+        width: 50%;
+        float: right;
+    }
+
+    #reviews {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    .relatedProducts {
+        display: inline-flex;
+        clear: both;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .relatedItem {
+        float: left;
+        width: 10%;
+        margin: 2%;
+        position: relative;
+        background: white;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        background-color: red;
+        z-index: 200;
+    }
+
+    .overlay:hover .relatedItem:hover {
+        display: block;
+    }
+
+}
+
+/* ---- END DESKTOP QUERIES ----- */
+
+
+
